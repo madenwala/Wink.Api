@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.352
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wink.Api", "Wink.Api\Wink.Api.csproj", "{1FFA7E60-D3D7-4B1D-899C-A018E674ACAF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wink.Api.Test", "..\Wink.Api.Test\Wink.Api.Test.csproj", "{0ECFA2FB-00BA-4E2A-880D-270590168BE9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1FFA7E60-D3D7-4B1D-899C-A018E674ACAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1FFA7E60-D3D7-4B1D-899C-A018E674ACAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1FFA7E60-D3D7-4B1D-899C-A018E674ACAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1FFA7E60-D3D7-4B1D-899C-A018E674ACAF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0ECFA2FB-00BA-4E2A-880D-270590168BE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0ECFA2FB-00BA-4E2A-880D-270590168BE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0ECFA2FB-00BA-4E2A-880D-270590168BE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0ECFA2FB-00BA-4E2A-880D-270590168BE9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5AFF842C-05C9-4AF1-809C-B06110C655FC}
+	EndGlobalSection
+EndGlobal
