@@ -7,7 +7,7 @@
         public Pagination pagination { get; set; }
     }
 
-    public class UserAuthenticationData : ModelBase
+    public class UserAuthenticationData : BaseModel
     {
         public string access_token { get; set; }
         public string refresh_token { get; set; }

@@ -11,7 +11,7 @@ using Wink.Api.Models;
 
 namespace Wink.Api
 {
-    public sealed class WinkClient : ClientBase
+    public sealed class WinkClient : BaseClientApi
     {
         #region Variables
 
@@ -107,14 +107,14 @@ namespace Wink.Api
         
         #region Device
 
-        public Task<Response<WinkList<DeviceBase>>> GetDevices(CancellationToken ct)
+        public Task<Response<WinkModelList<BaseDevice>>> GetDevices(CancellationToken ct)
         {
             var url = "/users/me/wink_devices";
             // TODO for each device, convert to its model type
-            return this.GetAsync<Response<WinkList<DeviceBase>>>(url, ct);
+            return this.GetAsync<Response<WinkModelList<BaseDevice>>>(url, ct);
         }
 
-        public Task<T> GetDevice<T>(DeviceBase device, CancellationToken ct)
+        public Task<T> GetDevice<T>(BaseDevice device, CancellationToken ct)
         {
             var url = $"/{device.object_type}/{device.object_id}";
             return this.GetAsync<T>(url, ct);
@@ -124,23 +124,23 @@ namespace Wink.Api
 
         #region Sharing
 
-        public Task<Response<WinkList<User>>> GetDeviceSharedUsers(DeviceBase device, CancellationToken ct)
+        public Task<Response<WinkModelList<User>>> GetDeviceSharedUsers(BaseDevice device, CancellationToken ct)
         {
             var url = $"/{device.object_type}/{device.object_id}/users";
-            return this.GetAsync<Response<WinkList<User>>>(url, ct);
+            return this.GetAsync<Response<WinkModelList<User>>>(url, ct);
         }
 
-        public Task<Response<WinkList<User>>> ShareDevice(DeviceBase device, User user, CancellationToken ct)
+        public Task<Response<WinkModelList<User>>> ShareDevice(BaseDevice device, User user, CancellationToken ct)
         {
             var url = $"/{device.object_type}/{device.object_id}/users";
             var content = new StringContent(JsonConvert.SerializeObject(user.email));
-            return this.PostAsync<Response<WinkList<User>>>(url, ct, content);
+            return this.PostAsync<Response<WinkModelList<User>>>(url, ct, content);
         }
 
-        public Task<Response<WinkList<User>>> UnshareDevice(DeviceBase device, User user, CancellationToken ct)
+        public Task<Response<WinkModelList<User>>> UnshareDevice(BaseDevice device, User user, CancellationToken ct)
         {
             var url = $"/{device.object_type}/{device.object_id}/users/{user.email}";
-            return this.DeleteAsync<Response<WinkList<User>>>(url, ct);
+            return this.DeleteAsync<Response<WinkModelList<User>>>(url, ct);
         }
 
         #endregion

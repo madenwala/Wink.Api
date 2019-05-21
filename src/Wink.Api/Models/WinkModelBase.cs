@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Wink.Api.Models
 {
-    public abstract class WinkModelBase: ModelBase
+    public abstract class WinkModelBase: BaseModel
     {
     }
 }

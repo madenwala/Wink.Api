@@ -7,7 +7,7 @@ using Wink.Api.Extensions;
 
 namespace Wink.Api
 {
-    public abstract class ClientBase : IDisposable
+    public abstract class BaseClientApi : IDisposable
     {
         #region Variables
 
@@ -19,7 +19,7 @@ namespace Wink.Api
 
         #region Constructors
 
-        public ClientBase(string baseUrl = null)
+        public BaseClientApi(string baseUrl = null)
         {
             this.SetBaseUrl(baseUrl);
             this.Client = new HttpClient();

@@ -1,6 +1,6 @@
 ﻿namespace Wink.Api.Models
 {
-    public abstract class Response<T> : ModelBase
+    public abstract class Response<T> : BaseModel
     {
         public T data { get; set; }
         public object[] errors { get; set; }
