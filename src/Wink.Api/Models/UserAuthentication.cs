@@ -17,5 +17,7 @@
         public string scopes { get; set; }
         public int created_at { get; set; }
         public int updated_at { get; set; }
+        public string object_type { get; set; }
+        public string object_id { get; set; }
     }
 }

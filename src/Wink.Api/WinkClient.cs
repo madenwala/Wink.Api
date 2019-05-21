@@ -97,7 +97,6 @@ namespace Wink.Api
 
         public async Task<UserAuthentication> RefreshTokenAsync(CancellationToken ct)
         {
-            this.SetHeaders();
             string url = $"/oauth2/token?client_id={CLIENT_ID}&client_secret={CLIENT_SECRET}&grant_type=refresh_token&refresh_token={this.UserAuthentication.refresh_token}";
             this.UserAuthentication = await this.PostAsync<UserAuthentication>(url, ct);
             return this.UserAuthentication;
