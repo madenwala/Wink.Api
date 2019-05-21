@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Wink.Api
+namespace Wink.Api.Models
 {
-    public sealed class WinkClient : ClientBase
+    public abstract class WinkModelBase: ModelBase
     {
     }
 }
