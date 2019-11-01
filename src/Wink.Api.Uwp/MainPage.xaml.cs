@@ -45,7 +45,7 @@ namespace Wink.Api.Uwp
             CancellationToken ct = new CancellationToken();
             if (this.Client?.UserAuthentication != null)
             {
-                spToken.DataContext = await this.Client.RefreshTokenAsync(ct);
+                spToken.DataContext = JsonConvert.SerializeObject(await this.Client.RefreshTokenAsync(ct));
                 await this.RefreshAsync(ct);
             }
             else
@@ -54,20 +54,20 @@ namespace Wink.Api.Uwp
 
         private async void btnLogout_Click(object sender, RoutedEventArgs e)
         {
-            //if (this.Client != null)
-            //{
-            //    CancellationToken ct = new CancellationToken();
-            //    spToken.DataContext = this.Client = null;
-            //    await this.RefreshAsync(ct);
-            //}
+            if (this.Client != null)
+            {
+                CancellationToken ct = new CancellationToken();
+                spToken.DataContext = this.Client = null;
+                await this.RefreshAsync(ct);
+            }
         }
 
         private async void btnRefreshData_Click(object sender, RoutedEventArgs e)
         {
-            //CancellationToken ct = new CancellationToken();
-            //if (this.Client == null)
-            //    await this.AuthenticateAsync(ct);
-            //await this.RefreshAsync(ct);
+            CancellationToken ct = new CancellationToken();
+            if (this.Client == null)
+                await this.AuthenticateAsync(ct);
+            await this.RefreshAsync(ct);
         }
 
         private async Task AuthenticateAsync(CancellationToken ct)
@@ -78,26 +78,26 @@ namespace Wink.Api.Uwp
 
         private async Task RefreshAsync(CancellationToken ct)
         {
-            //if (this.Client?.Token == null)
-            //{
-            //    piDataRange.DataContext = null;
-            //    piEGV.DataContext = null;
-            //    piDevices.DataContext = null;
-            //    piEvents.DataContext = null;
-            //    piCalibrations.DataContext = null;
-            //    piStatistics.DataContext = null;
-            //    return;
-            //}
+            if (this.Client?.UserAuthentication == null)
+            {
+                piDataRange.DataContext = null;
+                piEGV.DataContext = null;
+                piDevices.DataContext = null;
+                piEvents.DataContext = null;
+                piCalibrations.DataContext = null;
+                piStatistics.DataContext = null;
+                return;
+            }
 
-            //try
-            //{
-            //    piDataRange.DataContext = null;
-            //    piDataRange.DataContext = JsonConvert.SerializeObject(await this.Client.GetDataRangeAsync(ct));
-            //}
-            //catch (Exception ex)
-            //{
-            //    piDataRange.DataContext = ex.ToString();
-            //}
+            try
+            {
+                piDataRange.DataContext = null;
+                piDataRange.DataContext = JsonConvert.SerializeObject(await this.Client.GetDevices(ct));
+            }
+            catch (Exception ex)
+            {
+                piDataRange.DataContext = ex.ToString();
+            }
         }
     }
 }

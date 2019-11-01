@@ -1,6 +1,6 @@
 ﻿namespace Wink.Api.Models
 {
-    public abstract class Response<T> : BaseModel
+    public sealed class Response<T> : BaseModel
     {
         public T data { get; set; }
         public object[] errors { get; set; }
@@ -9,5 +9,6 @@
 
     public sealed class Pagination
     {
+        public int count { get; set; }
     }
 }

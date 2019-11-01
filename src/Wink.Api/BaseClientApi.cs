@@ -75,7 +75,7 @@ namespace Wink.Api
             }
         }
 
-        private async Task<HttpResponseMessage> GetAsync(string url, CancellationToken ct)
+        protected internal async Task<HttpResponseMessage> GetAsync(string url, CancellationToken ct)
         {
             var uri = this.CreateRequestUri(url);
             this.Log("GET REQUEST URL: " + uri);
