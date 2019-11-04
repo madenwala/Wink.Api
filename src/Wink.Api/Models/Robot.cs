@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Wink.Api.Models
 {
-    public sealed class Robot : WinkPubNubModelBase
+    public sealed class Robot : WinkModelBase
     {
     }
 }

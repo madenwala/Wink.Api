@@ -12,12 +12,8 @@ namespace Wink.Api.Models
         public string email { get; set; }
         public UserAuthentication oauth2 { get; set; }
         public string locale { get; set; }
-        public Units units { get; set; }
+        public DeviceThermostatUnits units { get; set; }
         public bool tos_accepted { get; set; }
         public bool confirmed { get; set; }
-    }
-
-    public sealed class Units : WinkModelBase
-    {
     }
 }

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Wink.Api.Models
 {
-    public sealed class Group : WinkPubNubModelBase
+    public sealed class Group : WinkModelBase
     {
     }
 }

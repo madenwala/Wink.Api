@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Wink.Api.Models
+﻿namespace Wink.Api.Models
 {
-    public abstract class WinkModelBase: BaseModel
+    public abstract class WinkModelBase : BaseModel
     {
     }
 }
